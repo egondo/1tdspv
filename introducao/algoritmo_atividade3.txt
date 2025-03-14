@@ -1,0 +1,9 @@
+leia o primeiro numero da seq e armazene em maior
+
+enquanto nao li os 9 numeros restantes faça
+
+    leia o proximo numero e guarde em num
+    se num > maior entao 
+        maior <- num (guardo num em maior)
+
+imprimo maior
