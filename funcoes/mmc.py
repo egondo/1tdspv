@@ -1,3 +1,6 @@
+
+#public int mmc(int a, int b)
+
 def mmc(a: int, b: int) -> int:
     multiplo = a
     while multiplo % b != 0:
