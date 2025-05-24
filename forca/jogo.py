@@ -21,7 +21,7 @@ def get_palavra_secreta_2(palavra: str) -> str:
 
 
 if __name__ == '__main__':
-    palavra = "Honduras"
+    palavra = "Estados Unidos"
     segredo = get_palavra_secreta(palavra)
     erros = 0
     letras_chutadas = ''
