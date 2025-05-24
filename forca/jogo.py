@@ -7,10 +7,10 @@ def get_palavra_secreta(palavra: str) -> str:
     return resp
 
 
-def substitui(frase: str, letra: str) -> str:
+def substitui(frase: str, letras: str) -> str:
     resp = ""
     for c in frase:
-        if c == letra:
+        if c in letras:
             resp = resp + f'{c} '
         else:
             resp = resp + '_ '
@@ -21,13 +21,23 @@ def get_palavra_secreta_2(palavra: str) -> str:
 
 
 if __name__ == '__main__':
-    palavra = "Espanha"
+    palavra = "Honduras"
     segredo = get_palavra_secreta(palavra)
-    erros = 6
-    while erros > 0 and '_' in segredo:
+    erros = 0
+    letras_chutadas = ''
+
+    while erros < 6 and '_' in segredo:
         print(segredo)
+        print(f"Erros {erros}")
         letra = input("Letra: ")[0]
-        segredo = substitui(palavra, letra)
+        letras_chutadas = letras_chutadas + letra
+        segredo = substitui(palavra, letras_chutadas)
         if not letra in palavra:
-            erros = erros - 1 
+            erros = erros + 1 
     
+    if erros >= 6:
+        print("Você perdeu, a palavra era: ")
+    else:
+        print("Você venceu, a palavra era: ")
+
+    print(palavra)
