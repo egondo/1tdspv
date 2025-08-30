@@ -22,6 +22,7 @@ letras = []
 i = 0
 for chave in dic:
     if not chave in letras:
+    #if busca_binaria(letras, chave) == -1: #versao com buscabinaria
         letras.append(chave)
         organiza(letras, i)
         i = i + 1
