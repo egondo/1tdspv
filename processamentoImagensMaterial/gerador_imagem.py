@@ -10,7 +10,6 @@ def desenha_coluna(matriz, altura, pos_lin, pos_col):
                 matriz[i + pos_lin][j + pos_col] = 110
             
 
-
 desenho = []
 for i in range(400):
     desenho.append([240] * 600)
