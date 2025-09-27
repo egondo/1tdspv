@@ -27,3 +27,23 @@ def salva_veiculo(veiculo: dict):
             cur.execute(sql, veiculo)
             veiculo['id'] = new_id.getvalue()[0]
         con.commit()
+
+
+def consulta_tudo():
+    resp = []
+    with get_conexao() as con:
+        with con.cursor() as cur:
+            sql = "SELECT e.documento, e.nome, e.telefone, v.montadora, v.modelo, v.ano from empresa e join carro v on e.id = v.proprietario_id order by e.documento"
+            cur.execute(sql)
+            registros = cur.fetchall()
+            for reg in registros:
+                info = {
+                    "documento": reg[0],
+                    "nome": reg[1],
+                    "telefone": reg[2],
+                    "montadora": reg[3],
+                    "modelo": reg[4],
+                    "ano": reg[5]
+                }
+                resp.append(info)
+    return resp            
