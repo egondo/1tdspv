@@ -1,0 +1,190 @@
+Flamengo; 6; Corinthians;3
+Palmeiras; 6; Corinthians;3
+São Paulo; 0; Corinthians;2
+Atlético Mineiro; 4; Corinthians;0
+Internacional; 2; Corinthians;1
+Fluminense; 4; Corinthians;5
+Botafogo; 5; Corinthians;3
+Fortaleza; 2; Corinthians;1
+Bahia; 1; Corinthians;0
+Santos; 6; Corinthians;4
+Vasco da Gama; 0; Corinthians;1
+Mirassol; 0; Corinthians;6
+RB Bragantino; 4; Corinthians;2
+Grêmio; 1; Corinthians;5
+Juventude; 5; Corinthians;1
+Vitória; 6; Corinthians;4
+Sport; 2; Corinthians;1
+Ceará; 0; Corinthians;6
+Cruzeiro; 1; Corinthians;2
+Palmeiras; 5; Flamengo;5
+São Paulo; 4; Flamengo;5
+Atlético Mineiro; 3; Flamengo;1
+Internacional; 0; Flamengo;6
+Fluminense; 5; Flamengo;1
+Botafogo; 2; Flamengo;4
+Fortaleza; 5; Flamengo;5
+Bahia; 5; Flamengo;3
+Santos; 3; Flamengo;2
+Vasco da Gama; 2; Flamengo;4
+Mirassol; 1; Flamengo;5
+RB Bragantino; 4; Flamengo;1
+Grêmio; 4; Flamengo;0
+Juventude; 5; Flamengo;0
+Vitória; 3; Flamengo;4
+Sport; 0; Flamengo;2
+Ceará; 5; Flamengo;1
+Cruzeiro; 6; Flamengo;3
+São Paulo; 6; Palmeiras;5
+Atlético Mineiro; 0; Palmeiras;0
+Internacional; 3; Palmeiras;5
+Fluminense; 3; Palmeiras;6
+Botafogo; 3; Palmeiras;0
+Fortaleza; 5; Palmeiras;5
+Bahia; 2; Palmeiras;4
+Santos; 0; Palmeiras;2
+Vasco da Gama; 4; Palmeiras;4
+Mirassol; 2; Palmeiras;5
+RB Bragantino; 3; Palmeiras;5
+Grêmio; 3; Palmeiras;5
+Juventude; 5; Palmeiras;3
+Vitória; 1; Palmeiras;4
+Sport; 5; Palmeiras;1
+Ceará; 1; Palmeiras;4
+Cruzeiro; 1; Palmeiras;3
+Atlético Mineiro; 0; São Paulo;4
+Internacional; 5; São Paulo;2
+Fluminense; 6; São Paulo;5
+Botafogo; 1; São Paulo;2
+Fortaleza; 2; São Paulo;4
+Bahia; 6; São Paulo;1
+Santos; 2; São Paulo;5
+Vasco da Gama; 3; São Paulo;3
+Mirassol; 6; São Paulo;2
+RB Bragantino; 6; São Paulo;6
+Grêmio; 4; São Paulo;5
+Juventude; 4; São Paulo;1
+Vitória; 5; São Paulo;1
+Sport; 1; São Paulo;4
+Ceará; 0; São Paulo;0
+Cruzeiro; 4; São Paulo;4
+Internacional; 4; Atlético Mineiro;5
+Fluminense; 5; Atlético Mineiro;4
+Botafogo; 4; Atlético Mineiro;0
+Fortaleza; 3; Atlético Mineiro;5
+Bahia; 2; Atlético Mineiro;4
+Santos; 5; Atlético Mineiro;0
+Vasco da Gama; 3; Atlético Mineiro;3
+Mirassol; 4; Atlético Mineiro;1
+RB Bragantino; 4; Atlético Mineiro;6
+Grêmio; 2; Atlético Mineiro;5
+Juventude; 6; Atlético Mineiro;1
+Vitória; 5; Atlético Mineiro;0
+Sport; 5; Atlético Mineiro;4
+Ceará; 3; Atlético Mineiro;4
+Cruzeiro; 3; Atlético Mineiro;3
+Fluminense; 4; Internacional;5
+Botafogo; 4; Internacional;1
+Fortaleza; 5; Internacional;6
+Bahia; 0; Internacional;2
+Santos; 6; Internacional;4
+Vasco da Gama; 5; Internacional;6
+Mirassol; 1; Internacional;0
+RB Bragantino; 0; Internacional;5
+Grêmio; 5; Internacional;5
+Juventude; 0; Internacional;3
+Vitória; 4; Internacional;0
+Sport; 4; Internacional;1
+Ceará; 6; Internacional;0
+Cruzeiro; 0; Internacional;4
+Botafogo; 1; Fluminense;5
+Fortaleza; 0; Fluminense;1
+Bahia; 1; Fluminense;6
+Santos; 5; Fluminense;3
+Vasco da Gama; 5; Fluminense;1
+Mirassol; 2; Fluminense;1
+RB Bragantino; 4; Fluminense;1
+Grêmio; 3; Fluminense;4
+Juventude; 3; Fluminense;1
+Vitória; 0; Fluminense;0
+Sport; 4; Fluminense;3
+Ceará; 3; Fluminense;2
+Cruzeiro; 6; Fluminense;2
+Fortaleza; 2; Botafogo;5
+Bahia; 4; Botafogo;4
+Santos; 5; Botafogo;2
+Vasco da Gama; 2; Botafogo;3
+Mirassol; 5; Botafogo;3
+RB Bragantino; 1; Botafogo;6
+Grêmio; 2; Botafogo;1
+Juventude; 1; Botafogo;4
+Vitória; 1; Botafogo;4
+Sport; 0; Botafogo;2
+Ceará; 4; Botafogo;4
+Cruzeiro; 1; Botafogo;3
+Bahia; 5; Fortaleza;0
+Santos; 2; Fortaleza;6
+Vasco da Gama; 3; Fortaleza;4
+Mirassol; 2; Fortaleza;3
+RB Bragantino; 1; Fortaleza;2
+Grêmio; 2; Fortaleza;4
+Juventude; 2; Fortaleza;1
+Vitória; 1; Fortaleza;6
+Sport; 4; Fortaleza;5
+Ceará; 4; Fortaleza;0
+Cruzeiro; 2; Fortaleza;1
+Santos; 5; Bahia;4
+Vasco da Gama; 3; Bahia;1
+Mirassol; 1; Bahia;1
+RB Bragantino; 4; Bahia;5
+Grêmio; 6; Bahia;4
+Juventude; 5; Bahia;5
+Vitória; 5; Bahia;3
+Sport; 0; Bahia;1
+Ceará; 3; Bahia;2
+Cruzeiro; 1; Bahia;5
+Vasco da Gama; 0; Santos;6
+Mirassol; 3; Santos;4
+RB Bragantino; 4; Santos;2
+Grêmio; 2; Santos;0
+Juventude; 0; Santos;6
+Vitória; 6; Santos;2
+Sport; 6; Santos;4
+Ceará; 5; Santos;6
+Cruzeiro; 0; Santos;5
+Mirassol; 1; Vasco da Gama;1
+RB Bragantino; 1; Vasco da Gama;5
+Grêmio; 6; Vasco da Gama;4
+Juventude; 0; Vasco da Gama;4
+Vitória; 6; Vasco da Gama;4
+Sport; 6; Vasco da Gama;2
+Ceará; 5; Vasco da Gama;1
+Cruzeiro; 3; Vasco da Gama;3
+RB Bragantino; 3; Mirassol;6
+Grêmio; 4; Mirassol;0
+Juventude; 2; Mirassol;0
+Vitória; 0; Mirassol;3
+Sport; 5; Mirassol;1
+Ceará; 6; Mirassol;2
+Cruzeiro; 1; Mirassol;2
+Grêmio; 3; RB Bragantino;3
+Juventude; 2; RB Bragantino;3
+Vitória; 4; RB Bragantino;5
+Sport; 1; RB Bragantino;0
+Ceará; 6; RB Bragantino;3
+Cruzeiro; 4; RB Bragantino;3
+Juventude; 1; Grêmio;3
+Vitória; 3; Grêmio;1
+Sport; 2; Grêmio;6
+Ceará; 1; Grêmio;1
+Cruzeiro; 0; Grêmio;5
+Vitória; 2; Juventude;5
+Sport; 0; Juventude;2
+Ceará; 2; Juventude;0
+Cruzeiro; 3; Juventude;0
+Sport; 0; Vitória;0
+Ceará; 5; Vitória;5
+Cruzeiro; 5; Vitória;4
+Ceará; 2; Sport;3
+Cruzeiro; 6; Sport;6
+Cruzeiro; 3; Ceará;6
