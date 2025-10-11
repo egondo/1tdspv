@@ -19,13 +19,18 @@ def cria_filme():
 @app.route("/filmes", methods=['PUT'])
 def altera_filme():
     filme = request.json
-    #poderia fazer uma RN: nao existem dois filmes com o mesmo nome
+    achou = False
     i = 0
     while i < len(banco.filmes):
         if filme['titulo'] == banco.filmes[i]['titulo']:
             banco.filmes[i] = filme
+            achou = True
         i = i + 1
 
+    if not achou:
+        info = {'title': 'not found', 'status': 404}
+        return info, 404
+        
     return (filme, 201)
 
 app.run(debug=True)
