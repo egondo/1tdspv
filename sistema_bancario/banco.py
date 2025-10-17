@@ -24,7 +24,7 @@ def insere_cliente(cliente):
 
             cur.execute(sql, cliente)
             cliente['id'] = new_var.getvalue()[0]
-    con.commit()
+        con.commit()
 
 def insere_endereco(endereco, id_cliente):
     with get_conexao() as con:
@@ -33,7 +33,7 @@ def insere_endereco(endereco, id_cliente):
 
             endereco['pessoa_id'] = id_cliente
             cur.execute(sql, endereco)
-    con.commit()
+        con.commit()
 
 def insere_conta(cliente: dict):
     with get_conexao() as con:
