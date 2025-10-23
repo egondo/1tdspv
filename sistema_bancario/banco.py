@@ -40,3 +40,26 @@ def insere_conta(cliente: dict):
             info = {"id_conta": id_conta, "cliente_id": cliente['id']}
             cur.execute(sql, info)
         con.commit()
+
+
+def insere_transacao(transacao: dict):
+    with get_conexao() as con:
+        with con.cursor() as cur:
+            sql = "INSERT INTO TRANSACAO(valor, data_hora, contraparte, tipo, conta_id) VALUES(:valor, current_timestamp, :contraparte, :tipo, :conta_id)"
+            cur.execute(sql, transacao)
+        con.commit()
+
+def atualiza_saldo(info: dict):
+    with get_conexao() as con:
+        with con.cursor() as cur:
+            sql = "UPDATE conta SET saldo = saldo + :valor WHERE id = :id"
+            cur.execute(sql, info)
+        con.commit()
+
+def consulta_conta(id: int):
+    with get_conexao() as con:
+        with con.cursor() as cur:
+            sql = "SELECT c.nome, c.telefone, cont.numero, cont.saldo, cont.tipo FROM conta cont join cliente c on cont.cliente_id = c.id WHERE c.id = :id"        
+            cur.execute(sql)
+            return cur.fetchone()
+        
