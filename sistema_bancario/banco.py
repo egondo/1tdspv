@@ -1,15 +1,6 @@
 import oracledb
 import traceback
 
-def consulta_viacep(cep):
-    end = {
-        'logradouro': 'Av Paulista',
-        'bairro': 'Bela Vista',
-        'cidade': 'São Paulo',
-        'cep': cep
-    }
-    return end
-
 def get_conexao():
     return oracledb.connect(user="pf0313", password="professor#23", dsn="oracle.fiap.com.br/orcl")
 
