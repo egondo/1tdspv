@@ -37,18 +37,3 @@ def registra_transacao(transacao: dict):
         msg = f"Erro no registro da transacao"
         raise Exception(msg)
 
-
-cli = {
-    "nome": "Luis Fernando",
-    "telefone": "(11) 9483-0484",
-    "documento": "324239344"
-}
-#abertura_conta(cli, '01311000')
-
-tran = {
-    "valor": 580,
-    "contraparte": "Eduardo",
-    "tipo": 'BOLETO',
-    "conta_id": 21
-}
-registra_transacao(tran)
