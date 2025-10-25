@@ -37,3 +37,6 @@ def registra_transacao(transacao: dict):
         msg = f"Erro no registro da transacao"
         raise Exception(msg)
 
+
+def recupera_clientes():
+    return recupera_clientes_banco(), 200 

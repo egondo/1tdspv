@@ -18,6 +18,17 @@ def cadastra_cliente():
     except Exception as erro:
         return {"erro": "Erro no cadastro do cliente"}, 400
 
+
+@app.route("/banco/cliente", methods=['GET'])
+@cross_origin()
+def recupera_cliente():
+    try:
+        clientes = neg.recupera_clientes()
+        return clientes, 200
+    except Exception as erro:
+        return {"erro": "Erro na consulta do cliente"}, 400
+
+
 @app.route("/banco/transacao", methods=['POST'])
 @cross_origin()
 def cadastra_transacao():

@@ -63,3 +63,19 @@ def consulta_conta(id: int):
             cur.execute(sql)
             return cur.fetchone()
         
+
+def recupera_clientes():
+    clientes = []
+    with get_conexao() as con:
+        with con.cursor() as cur:
+            sql = "SELECT c.nome, c.telefone, c.documento FROM cliente c WHERE c.ativo = true"
+            cur.execute(sql)
+            dados = cur.fetchall()
+            for reg in dados:
+                info = {
+                        "nome": dados[1],
+                        "telefone": dados[2],
+                        "documento": dados[3]
+                    }
+                clientes.append(info)
+        return clientes
