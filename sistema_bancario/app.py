@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 import negocio as neg
+import traceback
 
 app = Flask(__name__)
 
@@ -26,6 +27,7 @@ def recupera_cliente():
         clientes = neg.recupera_clientes()
         return clientes, 200
     except Exception as erro:
+        traceback.print_exc()
         return {"erro": "Erro na consulta do cliente"}, 400
 
 

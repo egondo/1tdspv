@@ -39,4 +39,13 @@ def registra_transacao(transacao: dict):
 
 
 def recupera_clientes():
-    return recupera_clientes_banco(), 200 
+    dados = recupera_clientes_banco() 
+    clientes = []
+    for reg in dados:
+        info = {
+            "nome": reg[0],
+            "telefone": reg[1],
+            "documento": reg[2]
+        }
+        clientes.append(info)
+    return clientes
