@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro e POST REST</title>
+    <style>
+        /* Estilos básicos para melhor visualização */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; /* Garante que padding e borda não aumentem a largura total */
+        }
+        button {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #4cae4c;
+        }
+        #message {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+            border: 1px solid #ebccd1;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Formulário de Cadastro</h2>
+    <form id="cadastroForm">
+        
+        <div>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+        
+        <div>
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{4,5}-\d{4}" title="Formato esperado: (99) 99999-9999 ou (99) 9999-9999">
+        </div>
+        
+        <div>
+            <label for="documento">Documento (Ex: CPF):</label>
+            <input type="text" id="documento" name="documento" required>
+        </div>
+        
+        <div>
+            <label for="cep">CEP:</label>
+            <input type="text" id="cep" name="cep" required pattern="\d{5}-\d{3}" title="Formato esperado: 99999-999">
+        </div>
+        
+        <button type="submit">Enviar Dados (POST)</button>
+    </form>
+    
+    <div id="message"></div>
+</div>
+
+<script>
+    document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+        // Previne o comportamento padrão do formulário de recarregar a página
+        event.preventDefault(); 
+        
+        // Chama a função para enviar os dados
+        enviarDadosParaWebservice();
+    });
+
+    /**
+     * Função principal para coletar os dados do formulário e enviar via POST.
+     */
+    function enviarDadosParaWebservice() {
+        // Coleta os valores dos campos
+        const nome = document.getElementById('nome').value;
+        const telefone = document.getElementById('telefone').value;
+        const documento = document.getElementById('documento').value;
+        const cep = document.getElementById('cep').value;
+        const messageDiv = document.getElementById('message');
+        
+        // Limpa mensagens anteriores
+        messageDiv.textContent = '';
+        messageDiv.className = '';
+
+        // Objeto de dados que será enviado no corpo da requisição POST
+        // OBSERVAÇÃO: Adapte este objeto conforme a necessidade do seu WEBSERVICE REAL!
+        const dadosParaEnvio = {
+            "nome": nome,
+            "telefone": telefone,
+            "documento": documento,
+            "cep": cep
+        }
+
+        // URL do seu webservice REST
+        // OBSERVAÇÃO: SUBSTITUA ESTA URL PELA URL REAL DO SEU WEBSERVICE!
+        const endpointUrl = 'https://onetdspv-1.onrender.com/banco/cliente'; // Exemplo de endpoint de teste
+
+        // Configuração da requisição fetch
+        fetch(endpointUrl, {
+            method: 'POST', // Define o método como POST
+            headers: {
+                'Content-Type': 'application/json', // Informa que o corpo é JSON
+                // Se o seu webservice precisar de autenticação, adicione aqui (ex: 'Authorization': 'Bearer SeuToken')
+            },
+            body: JSON.stringify(dadosParaEnvio) // Converte o objeto JavaScript em uma string JSON
+        })
+        .then(response => {
+            // Verifica se a resposta foi bem-sucedida (status code 200-299)
+            if (!response.ok) {
+                // Lança um erro se o status não for OK
+                throw new Error(`Erro de rede ou servidor: ${response.statusText} (Status: ${response.status})`);
+            }
+            // Tenta parsear a resposta como JSON
+            return response.json();
+        })
+        .then(data => {
+            // Este bloco é executado se a requisição for um sucesso
+            console.log('Sucesso:', data); // Exibe a resposta do servidor no console
+            
+            // Exibe mensagem de sucesso para o usuário
+            messageDiv.textContent = 'Dados enviados com sucesso! Resposta do Servidor (ID): ' + data.id;
+            messageDiv.classList.add('success');
+            
+            // Opcional: Limpar o formulário após o sucesso
+            document.getElementById('cadastroForm').reset();
+        })
+        .catch(error => {
+            // Este bloco é executado se houver algum erro (rede, servidor, ou no parsing)
+            console.error('Erro ao enviar dados:', error);
+            
+            // Exibe mensagem de erro para o usuário
+            messageDiv.textContent = 'Erro ao enviar dados. Verifique o console para mais detalhes. Detalhe: ' + error.message;
+            messageDiv.classList.add('error');
+        });
+    }
+
+    // --- FUNÇÕES DE MASCARAMENTO E VALIDAÇÃO (Opcional, mas recomendado) ---
+    
+    // Função para aplicar máscara de CEP (99999-999)
+    document.getElementById('cep').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+        if (value.length > 5) {
+            value = value.substring(0, 5) + '-' + value.substring(5, 8);
+        }
+        e.target.value = value;
+    });
+
+    // Função para aplicar máscara de Telefone ((99) 99999-9999 ou (99) 9999-9999)
+    document.getElementById('telefone').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for dígito
+        let maskedValue = '';
+        if (value.length > 0) {
+            maskedValue += '(' + value.substring(0, 2);
+        }
+        if (value.length > 2) {
+            maskedValue += ') ';
+        }
+        if (value.length > 6) {
+            // Se tiver 11 dígitos (celular) ou mais, usa o formato 5-4
+            if (value.length > 10) {
+                 maskedValue += value.substring(2, 7) + '-';
+                 maskedValue += value.substring(7, 11);
+            } else { // Se tiver 10 dígitos (fixo) ou menos, usa o formato 4-4
+                 maskedValue += value.substring(2, 6) + '-';
+                 maskedValue += value.substring(6, 10);
+            }
+        } else if (value.length > 2) {
+            maskedValue += value.substring(2);
+        }
+        e.target.value = maskedValue;
+    });
+</script>
+
+</body>
+</html>
