@@ -68,7 +68,7 @@ def recupera_clientes_banco():
     clientes = []
     with get_conexao() as con:
         with con.cursor() as cur:
-            sql = "SELECT c.nome, c.telefone, c.documento FROM cliente c"
+            sql = "SELECT c.nome, c.telefone, c.documento, c.id FROM cliente c ORDER BY c.nome"
             cur.execute(sql)
             dados = cur.fetchall()
         return dados

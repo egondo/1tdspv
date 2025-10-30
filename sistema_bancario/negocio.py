@@ -45,7 +45,8 @@ def recupera_clientes():
         info = {
             "nome": reg[0],
             "telefone": reg[1],
-            "documento": reg[2]
+            "documento": reg[2],
+            "id": reg[3]
         }
         clientes.append(info)
     return clientes
